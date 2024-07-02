@@ -1,4 +1,8 @@
 let numeroSecret = 6;
+let numeroDeUsuario = 0;
+let intentos = 1;
+let palabraVes = " vez"
+let maximoIntento = 3;
 
 alert("¡Bienvenida y bienvenido a nuestro sitio web!");
 
@@ -15,9 +19,23 @@ if(edad > 18){
     alert("vete de aqui niño.")
 }*/
 
-let numeroDeUsuario = prompt("Escribe un número: ");
-console.log(numeroDeUsuario);
+while(numeroDeUsuario != numeroSecret ){
+    numeroDeUsuario = prompt("Escribe un número: ");
+    console.log(numeroDeUsuario);
 
-if (numeroDeUsuario == numeroSecret) {
-    console.log("lo encontraste");
+    if (numeroDeUsuario == numeroSecret) {
+        alert(`Acertaste el numero es: ${numeroDeUsuario}, el numero de intentos fue${intentos} ${intentos == 1 ? " vez" : " veces"}`);
+    }else{
+        if(numeroDeUsuario < numeroSecret){
+            alert("el numero secreto es mayor")
+        }else{
+            alert("el numero secreto es menor")
+        }
+        intentos++;
+        if(intentos > maximoIntento){
+            alert("este fue el numero maximo de intentos "+maximoIntento)
+            break;
+        }
+    }
 }
+
