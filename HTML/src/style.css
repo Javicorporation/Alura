@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -17,18 +19,41 @@ body{
 .presentacion{
     display: flex;
     align-items: center;
-    margin: 10%;
+    margin: 10% 15%;
     justify-content: space-between;
 }
 
 .pressentarContenido{
-    width: 657px;
+    width: 615px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .presentaciondecontenidotitulo{
+    font-family: "New Amsterdam", sans-serif;
     font-size: 36px;
 }
 
 .parrafopresentacion{
     font-size: 24px;
+    font-family: "Open Sans", sans-serif;
+}
+.presentacionenlaces{
+    display: flex;
+    justify-content: space-between;
+}
+.botones{
+    width: 280px;
+    background-color: #22D4DF;
+    text-align: center;
+    padding: 21.5px;
+    border-radius: 16px;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    color: #000000;
+
+
 }
