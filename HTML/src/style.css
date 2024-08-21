@@ -8,7 +8,6 @@
 body{
     background-color: #000000;
     color: #f6f6f6;
-    height: 100vh;
     box-sizing: border-box;
 }
 
@@ -32,7 +31,7 @@ body{
 
 .presentaciondecontenidotitulo{
     font-family: "New Amsterdam", sans-serif;
-    font-size: 36px;
+    font-size: 46px;
 }
 
 .parrafopresentacion{
@@ -41,19 +40,46 @@ body{
 }
 .presentacionenlaces{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    gap: 32px;
 }
 .botones{
-    width: 280px;
-    background-color: #22D4DF;
+    width: 378px;
+    
     text-align: center;
     padding: 21.5px;
-    border-radius: 16px;
+    border-radius: 8px;
     font-size: 24px;
     font-weight: 600;
     text-decoration: none;
     font-family: "Open Sans", sans-serif;
-    color: #000000;
-
-
+    color: #f6f6f6;
+    border: 2px solid #22D4DF;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
+
+.presentacionEnlacesub{
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.botones:hover{
+    background-color: #272727;
+}
+
+.footer{
+    background-color: #22D4DF;
+    padding: 28px;
+    color: #000000;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.claseheader{}
+
+.headermenu{}
