@@ -1,24 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+:root{
+    --colorPrimario:#22D4DF;
+    --colorsegundario:#f6f6f6;
+    --colorterciario:#000000;
+}
+
+
+
 *{
     padding: 0;
     margin: 0;
 }
 
 body{
-    background-color: #000000;
-    color: #f6f6f6;
+    background-color: var(--colorterciario);
+    color: var(--colorsegundario);
     box-sizing: border-box;
 }
 
 
 .strongue{
-    color: #22D4DF;
+    color: var(--colorPrimario);
 }
 .presentacion{
     display: flex;
     align-items: center;
-    margin: 10% 15%;
+    margin: 7% 15%;
     justify-content: space-between;
 }
 
@@ -55,7 +63,7 @@ body{
     text-decoration: none;
     font-family: "Open Sans", sans-serif;
     color: #f6f6f6;
-    border: 2px solid #22D4DF;
+    border: 2px solid var(--colorPrimario);
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -72,7 +80,7 @@ body{
 }
 
 .footer{
-    background-color: #22D4DF;
+    background-color: var(--colorPrimario);
     padding: 28px;
     color: #000000;
     text-align: center;
@@ -80,6 +88,20 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.claseheader{}
+.claseheader{
+    padding: 2% 0% 0% 15%;
+}
 
-.headermenu{}
+.headermenu{
+    display: flex;
+    gap: 80px;
+
+}
+.headermenulinks{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--colorPrimario);
+    text-decoration: none;
+}
+
