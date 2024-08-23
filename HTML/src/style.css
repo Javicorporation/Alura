@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-:root{
-    --colorPrimario:#22D4DF;
-    --colorsegundario:#f6f6f6;
-    --colorterciario:#000000;
-}
 
 
 
@@ -14,8 +9,6 @@
 }
 
 body{
-    background-color: var(--colorterciario);
-    color: var(--colorsegundario);
     box-sizing: border-box;
 }
 
@@ -26,7 +19,6 @@ body{
 .presentacion{
     display: flex;
     align-items: center;
-    margin: 7% 15%;
     justify-content: space-between;
 }
 
@@ -88,15 +80,6 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.claseheader{
-    padding: 2% 0% 0% 15%;
-}
-
-.headermenu{
-    display: flex;
-    gap: 80px;
-
-}
 .headermenulinks{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 24px;
