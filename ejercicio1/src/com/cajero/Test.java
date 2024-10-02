@@ -13,6 +13,7 @@ public class Test {
         double fondos = 1200;
         boolean loopmenu = false;
 
+
         System.out.print("Escriba su nombre: ");
         String nombre = geting.next();
         System.out.print("Escriba su apellido: ");
