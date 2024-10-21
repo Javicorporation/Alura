@@ -1,4 +1,6 @@
 import com.aluracursos.screenmach.calculos.CalculadoraDeTiempo;
+import com.aluracursos.screenmach.calculos.FiltroRecomendaciones;
+import com.aluracursos.screenmatch.modelos.Episodio;
 import com.aluracursos.screenmatch.modelos.Pelicula;
 import com.aluracursos.screenmatch.modelos.Serie;
 
@@ -50,6 +52,16 @@ public class Principal {
         cal.incluye(serie1);
         cal.incluye(p3);
         System.out.println(cal.getTiempoTotal());
+
+        FiltroRecomendaciones filtroR = new FiltroRecomendaciones();
+        filtroR.filtra(p1);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setNombre("La Carpa");
+        episodio.getSerie(serie1);
+        episodio.setTotalViws(50);
+
 
 
 
