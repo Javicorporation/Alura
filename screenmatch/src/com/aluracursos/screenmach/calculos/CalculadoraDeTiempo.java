@@ -15,4 +15,6 @@ public class CalculadoraDeTiempo{
     public int getTiempoTotal() {
         return tiempoTotal;
     }
+
+    
 }

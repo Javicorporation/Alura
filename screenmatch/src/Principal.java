@@ -82,6 +82,8 @@ public class Principal {
 
         System.out.println("La primero pelicula: "+peliculas.get(0).getNombre());
 
+        peliculaDeBruno.
+
 
 
 
