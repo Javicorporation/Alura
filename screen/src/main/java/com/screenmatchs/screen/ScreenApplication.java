@@ -1,5 +1,6 @@
 package com.screenmatchs.screen;
 
+import com.screenmatchs.screen.services.ConsumoApi;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,18 +13,28 @@ import static java.lang.Integer.parseInt;
 public class ScreenApplication  implements CommandLineRunner {
 
     public static void main(String[] args) {
+
         SpringApplication.run(ScreenApplication.class, args);
     }
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Holi");
-        int min = 1; // Límite inferior
-        int max = 31; // Límite superior
+        var consumoApi = new ConsumoApi();
+        //var json = consumoApi.obtenerDatos("https://www.omdbapi.com/?i=tt3896198&apikey=d73ad810");
 
-        Random random = new Random();
-        int numeroAleatorio = random.nextInt((max - min) + 1) + min;
-
-        System.out.println("Número aleatorio: " + numeroAleatorio);
+        var json = consumoApi.obtenerDatos("https://coffee.alexflipnote.dev/random.json");
+        System.out.println(json);
     }
+
+//    @Override
+//    public void run(String... args) throws Exception {
+//        System.out.println("Holi");
+//        int min = 1; // Límite inferior
+//        int max = 31; // Límite superior
+//
+//        Random random = new Random();
+//        int numeroAleatorio = random.nextInt((max - min) + 1) + min;
+//
+//        System.out.println("Número aleatorio: " + numeroAleatorio);
+//    }
 }
