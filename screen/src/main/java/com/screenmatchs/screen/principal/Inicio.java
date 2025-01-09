@@ -1,5 +1,6 @@
 package com.screenmatchs.screen.principal;
 
+import com.screenmatchs.screen.model.DatosEpisodio;
 import com.screenmatchs.screen.model.DatosSerie;
 import com.screenmatchs.screen.model.DatosTemporadas;
 import com.screenmatchs.screen.services.ConsumoApi;
@@ -36,6 +37,21 @@ public class Inicio {
             temporadas.add(datosTemporada);
         }
         temporadas.forEach(System.out::println);
+
+
+        System.out.println("-------------------------");
+
+        // mostrar solo los titulos de las temporadas
+//        for (int i = 0; i < datos.totalTemporadas(); i++) {
+//            List<DatosEpisodio> episodiosTemporada = temporadas.get(i).episodios();
+//            for (int j = 0; j < episodiosTemporada.size(); j++) {
+//                System.out.println(episodiosTemporada.get(j).titulo());
+//            }
+//
+//        }
+
+        // con el uso de
+        temporadas.forEach(t -> t.episodios().forEach(e -> System.out.println(e.titulo())));
 
 
     }
