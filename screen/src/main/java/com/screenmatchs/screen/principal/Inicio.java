@@ -68,7 +68,11 @@ public class Inicio {
         System.out.println(" los mejores 5 episodios");
         listaDatosEpisodio.stream()
                 .filter(e -> !e.evaluacion().equalsIgnoreCase("N/A"))
+                .peek(e -> System.out.println("Primer Filtro: "+e))
                 .sorted(Comparator.comparing(DatosEpisodio :: evaluacion).reversed())
+                .peek(e -> System.out.println("segundo Filtro: "+e))
+                .map(e -> e.titulo().toUpperCase())
+                .peek(e -> System.out.println("tercer Filtro: "+e))
                 .limit(5)
                 .forEach(System.out::println);
 
