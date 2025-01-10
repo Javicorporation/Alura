@@ -27,10 +27,10 @@ public class ScreenApplication  implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        EjemploStreams ejemploStreams = new EjemploStreams();
-        ejemploStreams.muestraEjemplo();
-//        Inicio inicio = new Inicio();
-//        inicio.mostrarMenu();
+//        EjemploStreams ejemploStreams = new EjemploStreams();
+//        ejemploStreams.muestraEjemplo();
+        Inicio inicio = new Inicio();
+        inicio.mostrarMenu();
 //        var consumoApi = new ConsumoApi();
 //        var json = consumoApi.obtenerDatos("https://www.omdbapi.com/?t=game+of+thrones&apikey=d73ad810");
 //
