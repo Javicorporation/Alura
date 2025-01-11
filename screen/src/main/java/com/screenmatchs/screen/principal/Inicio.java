@@ -60,18 +60,18 @@ public class Inicio {
                 .collect(Collectors.toList());
 
         // top 5 episodios
-
-        System.out.println("-------------------------");
-        System.out.println(" los mejores 5 episodios");
-        listaDatosEpisodio.stream()
-                .filter(e -> !e.evaluacion().equalsIgnoreCase("N/A"))
-                .peek(e -> System.out.println("Primer Filtro: "+e))
-                .sorted(Comparator.comparing(DatosEpisodio :: evaluacion).reversed())
-                .peek(e -> System.out.println("segundo Filtro: "+e))
-                .map(e -> e.titulo().toUpperCase())
-                .peek(e -> System.out.println("tercer Filtro: "+e))
-                .limit(5)
-                .forEach(System.out::println);
+//
+//        System.out.println("-------------------------");
+//        System.out.println(" los mejores 5 episodios");
+//        listaDatosEpisodio.stream()
+//                .filter(e -> !e.evaluacion().equalsIgnoreCase("N/A"))
+//                .peek(e -> System.out.println("Primer Filtro: "+e))
+//                .sorted(Comparator.comparing(DatosEpisodio :: evaluacion).reversed())
+//                .peek(e -> System.out.println("segundo Filtro: "+e))
+//                .map(e -> e.titulo().toUpperCase())
+//                .peek(e -> System.out.println("tercer Filtro: "+e))
+//                .limit(5)
+//                .forEach(System.out::println);
 
 
 
@@ -105,17 +105,24 @@ public class Inicio {
 
         // buscar episodios por medio de una parte del titulo
         System.out.println("-------------------------");
-        System.out.print("Indica el fragmento de titulo: ");
-        var pedazoTitulo = sc.nextLine();
-        Optional<Episodio> episodioB = episodios.stream()
-                .filter(e -> e.getTitulo().toUpperCase().contains(pedazoTitulo.toUpperCase()))
-                .findFirst();
+//        System.out.print("Indica el fragmento de titulo: ");
+//        var pedazoTitulo = sc.nextLine();
+//        Optional<Episodio> episodioB = episodios.stream()
+//                .filter(e -> e.getTitulo().toUpperCase().contains(pedazoTitulo.toUpperCase()))
+//                .findFirst();
+//
+//        if (episodioB.isPresent()){
+//            System.out.println("Episodio encontrado.");
+//            System.out.println("Los datos son: "+ episodioB.get());
+//        }else {
+//            System.out.println("Episodio no encontrado" );
+//        }
 
-        if (episodioB.isPresent()){
-            System.out.println("Episodio encontrado.");
-            System.out.println("Los datos son: "+ episodioB.get());
-        }else {
-            System.out.println("Episodio no encontrado" );
-        }
+        Map<Integer, Double>  evaluarPorTemporada = episodios.stream()
+                .filter(e -> e.getEvaluacion() > 0.0)
+                .collect(Collectors.groupingBy(Episodio :: getTemporada,
+                        Collectors.averagingDouble(Episodio::getEvaluacion)));
+
+        System.out.println(evaluarPorTemporada);
     }
 }
