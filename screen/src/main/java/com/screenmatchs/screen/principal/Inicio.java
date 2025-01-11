@@ -9,10 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Inicio {
@@ -88,23 +85,37 @@ public class Inicio {
                 episodios.forEach(System.out::println);
 
 
-        // busqueda de serie por x fecha
+//        // busqueda de serie por x fecha
+//        System.out.println("-------------------------");
+//        System.out.print("Indica  una fecha: ");
+//        var fecha = sc.nextInt();
+//
+//        sc.nextLine();
+//
+//        LocalDate fechaBusqueda = LocalDate.of(fecha, 1, 1);
+//
+//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        episodios.stream()
+//                .filter( e -> e.getFecha() != null && e.getFecha().isAfter(fechaBusqueda))
+//                .forEach(e -> System.out.println(
+//                        "Temporada: "+e.getTemporada()+
+//                                ", Episodio: "+e.getTitulo()+
+//                                ", fecha: "+ e.getFecha().format(dtf)
+//                ));
+
+        // buscar episodios por medio de una parte del titulo
         System.out.println("-------------------------");
-        System.out.print("Indica  una fecha: ");
-        var fecha = sc.nextInt();
+        System.out.print("Indica el fragmento de titulo: ");
+        var pedazoTitulo = sc.nextLine();
+        Optional<Episodio> episodioB = episodios.stream()
+                .filter(e -> e.getTitulo().toUpperCase().contains(pedazoTitulo.toUpperCase()))
+                .findFirst();
 
-        sc.nextLine();
-
-        LocalDate fechaBusqueda = LocalDate.of(fecha, 1, 1);
-
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        episodios.stream()
-                .filter( e -> e.getFecha() != null && e.getFecha().isAfter(fechaBusqueda))
-                .forEach(e -> System.out.println(
-                        "Temporada: "+e.getTemporada()+
-                                ", Episodio: "+e.getTitulo()+
-                                ", fecha: "+ e.getFecha().format(dtf)
-                ));
-
+        if (episodioB.isPresent()){
+            System.out.println("Episodio encontrado.");
+            System.out.println("Los datos son: "+ episodioB.get());
+        }else {
+            System.out.println("Episodio no encontrado" );
+        }
     }
 }
